@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: radarr-svc
+  namespace: gkube
+spec:
+  ports:
+  - protocol: TCP
+    port: 7878
+    targetPort: 7878
+  selector:
+    app: radarr
+  type: NodePort

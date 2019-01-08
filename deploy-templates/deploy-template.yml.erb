@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <%= @name %>-deploy
+  namespace: gkube
+  labels:
+    app: <%= @name %>
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: <%= @name %>
+  template:
+    metadata:
+      labels:
+        app: <%= @name %>
+    spec:
+      serviceAccountName: gkube-robot
+      automountServiceAccountToken: false
+      volumes:
+        <% for @volume in @volumes -%>
+        - name: <%= @volume['name'] %>-pv
+          persistentVolumeClaim:
+            claimName: <%= @volume['name'] %>-pvc
+        <% end -%>
+        - name: gkube-downloads-pv
+          persistentVolumeClaim:
+            claimName: gkube-downloads-pvc
+      containers:
+        - name: <%= @name %>
+          image: linuxserver/<%= @name %>:latest
+          ports:
+            <% for @port in @ports -%>
+            - containerPort: <%= @port['port'] %>
+              protocol: <%= @port['protocol'] %>
+            <% end -%>
+          env:
+            <% for @env in @envs -%>
+            - name: <%= @env['var_name'] %>
+              value: <%= @env['var_value'] %>
+            <% end -%>
+            - name: TZ
+              value: "America/Los Angeles"
+          volumeMounts:
+            <% for @volume in @volumes -%>
+            - mountPath: "<%= @volume['mount_path'] %>"
+              name: <%= @volume['name'] %>
+            <% end -%>
+            - mountPath: "/downloads"
+              name: gkube-downloads-pv

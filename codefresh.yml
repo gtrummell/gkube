@@ -1,0 +1,7 @@
+version: '1.0'
+steps:
+  test:
+    title: Run tests
+    image: giantswarm/yamllint
+    commands:
+      - test/test.yml

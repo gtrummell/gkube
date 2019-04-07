@@ -1,8 +1,9 @@
+---
 version: '1.0'
 steps:
   test:
     title: Run tests
     image: python
     commands:
-      - pip install yamllint
-      - yamllint /codefresh/volume/gkube/test/test.yml
+      - pip install --upgrade yamllint
+      - cd /codefresh/volume/gkube && make ci

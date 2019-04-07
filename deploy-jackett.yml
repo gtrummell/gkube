@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jackett-deploy
+  namespace: gkube
+  labels:
+    app: jackett
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jackett
+  template:
+    metadata:
+      labels:
+        app: jackett
+    spec:
+      serviceAccountName: gkube-robot
+      automountServiceAccountToken: false
+      volumes:
+        - name: jackett-config-pv
+          persistentVolumeClaim:
+            claimName: jackett-config-pvc
+        - name: gkube-downloads-pv
+          persistentVolumeClaim:
+            claimName: gkube-downloads-pvc
+      containers:
+        - name: jackett
+          image: linuxserver/jackett:latest
+          ports:
+            - containerPort: 9117
+          env:
+            - name: PGID
+              value: "65535"
+            - name: PUID
+              value: "65535"
+            - name: TZ
+              value: "America/Los Angeles"
+          volumeMounts:
+            - mountPath: "/config"
+              name: jackett-config-pv
+            - mountPath: "/storage/gkube"
+              name: gkube-downloads-pv

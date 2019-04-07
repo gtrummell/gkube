@@ -1,15 +1,14 @@
-# Project Title
+# GKube
 
-[![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/eleusinian/gtrummell%2Fgkube%2Fgkube?branch=master&key=eyJhbGciOiJIUzI1NiJ9.NWNhOTE0ODE5NmZlZGI2MDJhMjRmNTI2.7uKgLews_87JQx5YowpnjX4Vm9RYk-zOYhGk-vQGxFY&type=cf-2)]( https://g.codefresh.io/pipelines/gkube/builds?repoOwner=gtrummell&repoName=gkube&serviceName=gtrummell%2Fgkube&filter=trigger:build~Build;branch:master;pipeline:5ca94b6353c6dd1cdff9ccfc~gkube)
-One Paragraph of project description goes here
+Kubernetes Personal NAS via microk8s [![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/eleusinian/gtrummell%2Fgkube%2Fgkube?branch=master&key=eyJhbGciOiJIUzI1NiJ9.NWNhOTE0ODE5NmZlZGI2MDJhMjRmNTI2.7uKgLews_87JQx5YowpnjX4Vm9RYk-zOYhGk-vQGxFY&type=cf-2)]( https://g.codefresh.io/pipelines/gkube/builds?repoOwner=gtrummell&repoName=gkube&serviceName=gtrummell%2Fgkube&filter=trigger:build~Build;branch:master;pipeline:5ca94b6353c6dd1cdff9ccfc~gkube)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+More to come.  The idea here is that you can curl an SSH script and wind up with a working GKube
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Some hardware
 
 ```
 Give examples

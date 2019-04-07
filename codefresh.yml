@@ -5,4 +5,4 @@ steps:
     image: python
     commands:
       - pip install yamllint
-      - yamllint /repo/test/test.yml
+      - yamllint /codefresh/volume/gkube/test/test.yml

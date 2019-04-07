@@ -1,5 +1,6 @@
 # Project Title
 
+[![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/eleusinian/gtrummell%2Fgkube%2Fgkube?branch=master&key=eyJhbGciOiJIUzI1NiJ9.NWNhOTE0ODE5NmZlZGI2MDJhMjRmNTI2.7uKgLews_87JQx5YowpnjX4Vm9RYk-zOYhGk-vQGxFY&type=cf-2)]( https://g.codefresh.io/pipelines/gkube/builds?repoOwner=gtrummell&repoName=gkube&serviceName=gtrummell%2Fgkube&filter=trigger:build~Build;branch:master;pipeline:5ca94b6353c6dd1cdff9ccfc~gkube)
 One Paragraph of project description goes here
 
 ## Getting Started

@@ -2,6 +2,7 @@ version: '1.0'
 steps:
   test:
     title: Run tests
-    image: giantswarm/yamllint
+    image: python
     commands:
-      - test/test.yml
+      - pip install yamllint
+      - yamllint /repo/test/test.yml

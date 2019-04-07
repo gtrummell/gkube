@@ -1,3 +1,4 @@
+---
 version: '1.0'
 steps:
   test:
@@ -5,4 +6,4 @@ steps:
     image: python
     commands:
       - pip install --upgrade yamllint
-      - find /codefresh/volume/gkube -maxdepth 1 -type f -exec yamllint {} \;
+      - cd /codefresh/volume/gkube && make ci

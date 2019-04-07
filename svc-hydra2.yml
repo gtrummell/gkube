@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -5,9 +6,9 @@ metadata:
   namespace: gkube
 spec:
   ports:
-  - protocol: TCP
-    port: 5076
-    targetPort: 5076
+    - protocol: TCP
+      port: 5076
+      targetPort: 5076
   selector:
     app: hydra2
   type: NodePort
